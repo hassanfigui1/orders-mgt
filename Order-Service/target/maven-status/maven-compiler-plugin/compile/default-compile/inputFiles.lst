@@ -1,0 +1,8 @@
+C:\Users\figui\Desktop\TP3-20241022T195514Z-001\orders-management\Order-service\src\main\java\com\orderservice\Controllers\OrderController.java
+C:\Users\figui\Desktop\TP3-20241022T195514Z-001\orders-management\Order-service\src\main\java\com\orderservice\interfaces\CustomerClient.java
+C:\Users\figui\Desktop\TP3-20241022T195514Z-001\orders-management\Order-service\src\main\java\com\orderservice\interfaces\ProductClient.java
+C:\Users\figui\Desktop\TP3-20241022T195514Z-001\orders-management\Order-service\src\main\java\com\orderservice\Models\Order.java
+C:\Users\figui\Desktop\TP3-20241022T195514Z-001\orders-management\Order-service\src\main\java\com\orderservice\Models\orderitem\OrderItem.java
+C:\Users\figui\Desktop\TP3-20241022T195514Z-001\orders-management\Order-service\src\main\java\com\orderservice\OrderServiceApplication.java
+C:\Users\figui\Desktop\TP3-20241022T195514Z-001\orders-management\Order-service\src\main\java\com\orderservice\Repositories\OrderRepo.java
+C:\Users\figui\Desktop\TP3-20241022T195514Z-001\orders-management\Order-service\src\main\java\com\orderservice\Services\OrderService.java

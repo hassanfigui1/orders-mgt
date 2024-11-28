@@ -1,0 +1,8 @@
+com\orderservice\interfaces\ProductClient.class
+com\orderservice\Models\Order.class
+com\orderservice\OrderServiceApplication.class
+com\orderservice\interfaces\CustomerClient.class
+com\orderservice\Models\orderitem\OrderItem.class
+com\orderservice\Repositories\OrderRepo.class
+com\orderservice\Controllers\OrderController.class
+com\orderservice\Services\OrderService.class

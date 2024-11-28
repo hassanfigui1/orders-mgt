@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="EurekaServer" />
+        <module name="Order-Service" />
+        <module name="Customer-Service" />
+        <module name="admin-server" />
+        <module name="configurationServer" />
+        <module name="gatway-service" />
+        <module name="Product-Service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Order-Item-Service" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Customer-Service" options="-parameters" />
+      <module name="EurekaServer" options="-parameters" />
+      <module name="Order-Item-Service" options="-parameters" />
+      <module name="Order-Service" options="-parameters" />
+      <module name="Product-Service" options="-parameters" />
+      <module name="admin-server" options="-parameters" />
+      <module name="configurationServer" options="-parameters" />
+      <module name="gatway-service" options="-parameters" />
+    </option>
+  </component>
+</project>

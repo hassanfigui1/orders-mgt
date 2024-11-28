@@ -1,0 +1,111 @@
+version: '3.8'
+
+services:
+  product-service:
+    build:
+      context: ./Product-Service
+      dockerfile: Dockerfile.product
+    image: figuiguihassan/product-service:latest  # Replace with your actual image name
+    ports:
+      - "8081:8081"
+    deploy:
+      replicas: 3  # Run 3 replicas of the product-service
+      resources:
+        limits:
+          memory: 512M
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - eureka-server
+
+  order-service:
+    build:
+      context: ./Order-Service
+      dockerfile: Dockerfile.order
+    image: figuiguihassan/order-service:latest  # Replace with your actual image name
+    ports:
+      - "8082:8082"
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          memory: 512M
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - eureka-server
+
+  gateway-service:
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile.gateway
+    image: figuiguihassan/gateway-service:latest  # Replace with your actual image name
+    ports:
+      - "8080:8080"
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - eureka-server
+
+  eureka-server:
+    build:
+      context: ./EurekaServer
+      dockerfile: Dockerfile.eureka
+    image: figuiguihassan/eureka-server:latest  # Replace with your actual image name
+    ports:
+      - "8761:8761"
+    deploy:
+      replicas: 1
+
+  customer-service:
+    build:
+      context: ./Customer-Service
+      dockerfile: Dockerfile.customer
+    image: figuiguihassan/customer-service:latest  # Replace with your actual image name
+    ports:
+      - "8083:8083"
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          memory: 512M
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - eureka-server
+
+  config-server:
+    build:
+      context: ./configurationServer
+      dockerfile: Dockerfile.config
+    image: figuiguihassan/config-server:latest  # Replace with your actual image name
+    ports:
+      - "8084:8084"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 512M
+    depends_on:
+      - eureka-server
+
+  admin-server:
+    build:
+      context: ./admin-server
+      dockerfile: Dockerfile.admin
+    image: figuiguihassan/admin-server:latest  # Replace with your actual image name
+    ports:
+      - "9090:9090"
+    deploy:
+      replicas: 1
+    depends_on:
+      - eureka-server
+
+networks:
+  default:
+    name: orders-management-network
